@@ -1,1 +1,1 @@
-My resume website
+A travel budget calculator created in HTML5, CSS, Bootstrap and AngularJS using Bower with Gulp. The user enters the cost and count of each item and clicks on the calculate button to find the total cost. Invalid entries will trigger a warning
