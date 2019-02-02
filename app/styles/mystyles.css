@@ -1,0 +1,82 @@
+body {
+	background-color: #20b286;
+	font-family: Arial, Helvetica, sans-serif;
+    color: #000;
+    font-size: small;
+}
+
+h1 {
+    color: #082d22;
+}
+
+/* Navigation tab area */
+@media (max-width: 767px) {
+    .nav-tabs > li { 
+        width: 100%;
+    }
+}
+
+.nav-tabs {
+	background-color: #000;
+}
+
+.tab-content {
+	color: #000;
+    padding: 5px;
+}
+
+.nav-tabs > li > a {
+	border: none;
+	color: #fff;
+}
+
+.nav-tabs > li > a:hover {
+	background-color: #97ccf1;
+    color: #000;
+	border: none;
+	border-radius: 0;
+}
+
+/* Form area */
+form {
+    background-color: #97ccf1;
+    padding: 10px 30px 10px 30px;
+    margin-bottom: 0px;
+}
+
+h4 {
+    color: #eb4000;
+    font-weight: bold;
+}
+
+label {
+    color: #3f3f3f;
+}
+
+.error {
+    color: #c71585;
+    font-weight: bold;
+}
+
+hr {
+    border-color: gray;
+}
+
+#calculation {
+    padding: 0px 30px 20px 30px;
+    background-color: #97ccf1
+}
+
+#calculate {
+    float: left;
+}
+
+#reset {
+    float: right;
+}
+ 
+#total {
+    font-size: 130%;
+    font-weight: bold;
+    text-align: center
+}

@@ -1,0 +1,61 @@
+<div class="container" ng-controller="CalculatorController">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12">
+            <h1>Travel Budget Calculator</h1>
+            <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" ng-class="{active: isSelected(1)}">
+                    <a href="" ng-click=" select(1)" aria-controls="all" role="tab">All</a>
+                </li>
+                <li role="presentation" ng-class="{active: isSelected(2)}">
+                    <a href="" ng-click=" select(2)" aria-controls="transportation" role="tab">Transport</a>
+                </li>
+                <li role="presentation" ng-class="{active: isSelected(3)}">
+                    <a href="" ng-click=" select(3)" aria-controls="lodging" role="tab">Lodging</a>
+                </li>
+                <li role="presentation" ng-class="{active: isSelected(4)}">
+                    <a href="" ng-click=" select(4)" aria-controls="tickets" role="tab">Tickets</a>
+                </li>
+                <li role="presentation" ng-class="{active: isSelected(5)}">
+                    <a href="" ng-click=" select(5)" aria-controls="foods_drinks" role="tab">Foods &amp; Drinks</a>
+                </li>
+                <li role="presentation" ng-class="{active: isSelected(6)}">
+                    <a href="" ng-click=" select(6)" aria-controls="misc" role="tab">Miscellaneous</a>
+                </li>
+            </ul>
+            <form novalidate>
+                <div class="tab-content tab-pane fade in active">
+                    <ul class="media-list" ng-repeat="expense in expenses | filter: filtText">
+                        <li class="media">
+                            <div class="media-body">
+                                <h4 class="media-heading">{{expense.name}}</h4>
+                                <table>
+                                    <tr>
+                                        <td><label for="cost">Cost: </label></td>
+                                        <td><label for="count">Count: </label></td>
+                                    </tr>
+                                    <tr>
+                                        <td><input class="form-control" type="text" name="cost" id="cost" ng-model="expense.cost" ng-blur="validateCostInput()"></td>
+                                        <td><input class="form-control" type="text" name="count" id="count" ng-model="expense.count" ng-blur="validateCountInput()"></td>
+                                    </tr>
+                                </table>
+                                <p class="error">{{expense.validateCost}} {{expense.validateCount}}</p>
+                            </div>
+                            <div class="media-right">
+                                <img class="expenses d-flex mr-3" ng-src={{expense.image}} alt="Expenses">
+                            </div>
+                        </li>
+                        <hr>
+                    </ul>
+                </div>
+                <p>
+                    <input id="calculate" name="calculate" type="button" value="Calculate" class="btn btn-primary" ng-click="calculate()">
+                    <input id="reset" name="reset" type="button" value="Reset" class="btn btn-secondary" ng-click="reset()">
+                </p>
+            </form>
+            <div id="calculation">
+                <p id="total">Total: {{total_cost | currency}}</p>
+                <p>After pressing 'Calculate' for the total cost, 'Reset' must be pressed to restart the calculator.</p>
+            </div>
+        </div>
+    </div>
+</div>
